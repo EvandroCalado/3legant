@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply flex min-h-screen w-full flex-col bg-white text-zinc-900 duration-300 dark:bg-zinc-900 dark:text-white;
+  }
+
+  main {
+    @apply flex-1;
+  }
+}
