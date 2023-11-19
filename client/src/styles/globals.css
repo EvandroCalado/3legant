@@ -10,4 +10,12 @@
   main {
     @apply flex-1;
   }
+
+  .input {
+    @apply border border-transparent border-b-neltral-04/30 py-2 outline-none duration-150 focus:border-b-primary;
+  }
+
+  .button {
+    @apply w-full cursor-pointer rounded-lg bg-neltral-07 py-[10px] text-white duration-150 hover:bg-neltral-07/95;
+  }
 }
