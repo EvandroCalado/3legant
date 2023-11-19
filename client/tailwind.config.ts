@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         primary: '#000000',
         blue: '#377dff',
-        gren: '#38c899',
+        green: '#38c899',
         orange: '#ffab00',
         red: '#ff5630',
         neltral: {
