@@ -3,10 +3,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 export default function SignUpForm() {
+  const [error, setError] = useState('');
   const router = useRouter();
 
   const signUpFormSchema = z.object({
@@ -19,6 +21,9 @@ export default function SignUpForm() {
       .string()
       .min(3, 'A seha deve ter pelo menos 3 caracteres')
       .max(20, 'A senha deve ter no máximo 20 caracteres'),
+    accept: z.literal(true, {
+      errorMap: () => ({ message: 'Por favor, aceite os termos de uso' }),
+    }),
   });
 
   type SignUpFormData = z.infer<typeof signUpFormSchema>;
@@ -42,10 +47,8 @@ export default function SignUpForm() {
       },
     );
 
-    const result = await res.json();
-
-    if (res.status === 400) {
-      console.log(result);
+    if (res.status === 401) {
+      setError('Email ou senha inválidas');
     }
 
     if (res.status === 200) {
@@ -66,47 +69,76 @@ export default function SignUpForm() {
         </Link>
       </span>
 
-      <form className="w-96 space-y-8" onSubmit={handleSubmit(onSubmit)}>
-        <input
-          className="input"
-          type="text"
-          placeholder="Nome de usuário"
-          {...register('username')}
-        />
+      <form className="w-80 space-y-8" onSubmit={handleSubmit(onSubmit)}>
+        <div className="flex flex-col">
+          <input
+            className="input"
+            type="text"
+            placeholder="Nome de usuário"
+            {...register('username')}
+          />
+          {errors.username && (
+            <span className="text-red">{errors.username.message}</span>
+          )}
+        </div>
 
-        <input
-          className="input"
-          type="email"
-          placeholder="Email"
-          {...register('email')}
-        />
+        <div className="flex flex-col">
+          <input
+            className="input"
+            type="email"
+            placeholder="Email"
+            {...register('email')}
+          />
+          {errors.email && (
+            <span className="text-red">{errors.email.message}</span>
+          )}
+        </div>
 
-        <input
-          className="input"
-          type="password"
-          placeholder="Senha"
-          {...register('password')}
-        />
+        <div className="flex flex-col">
+          <input
+            className="input"
+            type="password"
+            placeholder="Senha"
+            {...register('password')}
+          />
+          {errors.password && (
+            <span className="text-red">{errors.password.message}</span>
+          )}
+        </div>
 
         <div className="mb-4 flex items-center">
           <input
             id="default-checkbox"
             type="checkbox"
             className="text-blue-600 dark:focus:ring-blue-600 h-4 w-4 rounded border-gray-300 bg-gray-100 dark:border-primary dark:bg-primary"
+            {...register('accept')}
           />
+
           <label
             htmlFor="default-checkbox"
-            className="ms-2 text-sm font-medium text-neltral-04 dark:text-gray-300"
+            className="ms-2 text-[10px] font-medium text-neltral-04 dark:text-gray-300"
           >
             Aceito <span className="text-primary">Política de privacidade</span>{' '}
             e os
             <span className="ml-1 text-primary">Termos de uso</span>
           </label>
         </div>
+        {errors.accept && (
+          <span className="text-red">{errors.accept.message}</span>
+        )}
+
         <button className="button" type="submit">
           Increver-se
         </button>
       </form>
+
+      {error && (
+        <div className="bg-red p-2 text-center">
+          <span>
+            <span className="font-semibold text-white">{error}</span>
+          </span>
+        </div>
+      )}
     </div>
   );
 }
