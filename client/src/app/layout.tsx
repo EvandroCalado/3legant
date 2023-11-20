@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Boilerplate Next',
-  description: 'Boilerplate Next for Init projects',
+  title: '3legant',
+  description: 'Loja de móveis com design único.',
 };
 
 export default function RootLayout({
