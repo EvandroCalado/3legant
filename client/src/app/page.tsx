@@ -1,7 +1,11 @@
+import Header from '../components/Header';
+import Info from '../components/Info';
+
 export default function Home() {
   return (
-    <div className="text-xl font-bold">
-      <h1>Home</h1>
-    </div>
+    <>
+      <Info />
+      <Header />
+    </>
   );
 }
