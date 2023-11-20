@@ -35,11 +35,16 @@ export default function SignInForm() {
       callbackUrl: '/',
     });
 
+    if (res?.status === 401) {
+      setError('Email ou senha inválidas');
+      return;
+    }
+
     router.push(res?.url || '/');
   };
 
   return (
-    <div className="flex flex-col space-y-6 md:p-[160px]">
+    <div className="flex flex-col space-y-6 px-4 md:p-[160px]">
       <h2 className="text-[40px]">Entrar</h2>
       <span className="text-neltral-04">
         Ainda não tem conta?{' '}
@@ -51,7 +56,7 @@ export default function SignInForm() {
         </Link>
       </span>
 
-      <form className="w-96 space-y-8" onSubmit={handleSubmit(onSubmit)}>
+      <form className="w-80 space-y-8" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col">
           <input
             className="input"
@@ -94,14 +99,19 @@ export default function SignInForm() {
             </Link>
           </div>
         </div>
+
         <button className="button" type="submit">
           Entrar
         </button>
       </form>
 
-      <div>
-        <span>{error && <span>{error}</span>}</span>
-      </div>
+      {error && (
+        <div className="bg-red p-2 text-center">
+          <span>
+            <span className="font-semibold text-white">{error}</span>
+          </span>
+        </div>
+      )}
     </div>
   );
 }
