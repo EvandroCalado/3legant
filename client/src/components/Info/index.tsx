@@ -15,14 +15,14 @@ export default function Info() {
 
       <Link
         href={'/'}
-        className="flex items-center border-b border-blue text-blue [&>img]:hover:ml-1"
+        className="flex w-12 items-center border-b border-blue text-blue [&>img]:ml-1 [&>img]:hover:ml-2"
       >
         Loja{' '}
         <Image
           src={'/icons/arrow-right.svg'}
           alt="Arrow"
-          width={24}
-          height={24}
+          width={14}
+          height={14}
           className="text-blue duration-150"
         />
       </Link>
