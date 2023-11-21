@@ -19,3 +19,20 @@
     @apply w-full cursor-pointer rounded-lg bg-neltral-07 py-[10px] text-white duration-150 hover:bg-neltral-07/95;
   }
 }
+
+.swiper-pagination-bullet {
+  @apply bg-white;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply after:hidden;
+}
+
+.swiper-button-next {
+  @apply h-12 w-12 rotate-180 rounded-full bg-white bg-[url('/icons/arrow.svg')] bg-center bg-no-repeat duration-150 hover:bg-neltral-03;
+}
+
+.swiper-button-prev {
+  @apply h-12 w-12 rounded-full bg-white bg-[url('/icons/arrow.svg')] bg-center bg-no-repeat duration-150 hover:bg-neltral-03;
+}
