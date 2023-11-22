@@ -16,10 +16,10 @@ export default function ProductDestak({
     <div
       className={`${
         isLandscape ? 'flex-row md:gap-8 lg:gap-16' : 'flex-col'
-      } flex space-y-4 p-4`}
+      } flex space-y-4`}
     >
       <div className={`${isLandscape ? 'my-8' : ''} flex flex-col justify-end`}>
-        <h2 className="text-xl font-semibold">{title}</h2>
+        <h2 className="text-2xl font-semibold">{title}</h2>
         <Link
           href={'/'}
           className="flex w-12 items-center border-b border-primary text-sm text-primary [&>img]:ml-1 [&>img]:hover:ml-2"
