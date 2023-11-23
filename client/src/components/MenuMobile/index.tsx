@@ -14,7 +14,7 @@ export default function MenuMobile() {
       <div
         className={`${
           open ? 'block' : 'hidden'
-        } absolute inset-0 z-10 bg-primary/50 sm:hidden`}
+        } fixed inset-0 z-10 bg-primary/50 sm:hidden`}
         onClick={() => setOpen(!open)}
       ></div>
       <div
@@ -33,8 +33,8 @@ export default function MenuMobile() {
 
         <div
           className={`${
-            open ? '-right-[248px]' : 'right-14'
-          } absolute -top-[57px] z-30 flex h-screen w-72 flex-col justify-between space-y-4 bg-white p-4 duration-300`}
+            open ? 'left-0' : '-left-72'
+          } fixed top-0 z-30 flex h-screen w-72 flex-col justify-between space-y-4 bg-white p-4 duration-300`}
         >
           <div className="space-y-4">
             <div className="flex items-center justify-between">
