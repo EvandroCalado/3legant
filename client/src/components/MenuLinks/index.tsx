@@ -1,4 +1,9 @@
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
+
+export type MenuLinksProps = {
+  className?: string;
+};
 
 const MenuItems = [
   {
@@ -18,9 +23,14 @@ const MenuItems = [
   },
 ];
 
-export default function MenuLinks() {
+export default function MenuLinks({ className }: MenuLinksProps) {
   return (
-    <div className="hidden items-center space-x-4 font-semibold text-neltral-04 sm:flex">
+    <div
+      className={twMerge(
+        'hidden items-center space-x-4 font-semibold text-neltral-04 sm:flex',
+        className,
+      )}
+    >
       {MenuItems.map((item) => (
         <Link
           key={item.id}
