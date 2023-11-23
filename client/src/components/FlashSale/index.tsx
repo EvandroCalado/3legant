@@ -13,7 +13,7 @@ export default function FlashSale() {
         />
       </div>
 
-      <div className="flex-1 space-y-4">
+      <div className="flex-1 space-y-4 px-4">
         <h4 className="font-semibold uppercase text-blue">
           Com até 35% de desconto
         </h4>
