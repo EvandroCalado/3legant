@@ -2,7 +2,7 @@ import { Meta } from '@storybook/react';
 import MenuSearch from '.';
 
 export default {
-  title: 'Components/SearchMenu',
+  title: 'Components/MenuSearch',
   component: MenuSearch,
   parameters: {
     layout: 'fullscreen',
