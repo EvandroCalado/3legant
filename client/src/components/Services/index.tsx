@@ -12,7 +12,9 @@ export default function Services() {
             height={48}
           />
           <h4 className="font-semibold">Entrega Grátis</h4>
-          <p className="text-sm text-neutral-400">Para compras acimade R$100</p>
+          <p className="text-sm text-neutral-400">
+            Para compras acima de R$100
+          </p>
         </div>
 
         <div className="space-y-2">
