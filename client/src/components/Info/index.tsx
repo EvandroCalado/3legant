@@ -15,7 +15,7 @@ export default function Info() {
 
       <Link
         href={'/'}
-        className="flex w-12 items-center border-b border-blue text-blue [&>img]:ml-1 [&>img]:hover:ml-2"
+        className="hidden w-12 items-center border-b border-blue text-blue sm:flex [&>img]:ml-1 [&>img]:hover:ml-2"
       >
         Loja{' '}
         <Image
