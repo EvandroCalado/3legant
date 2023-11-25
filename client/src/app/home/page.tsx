@@ -1,14 +1,12 @@
 import Articles from '../../components/Articles';
 import Destak from '../../components/Destak';
 import FlashSale from '../../components/FlashSale';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Info from '../../components/Info';
 import NewArrivals from '../../components/NewArrivals';
 import NewsLetter from '../../components/NewsLetter';
 import Services from '../../components/Services';
 import ShowRoom from '../../components/ShowRoom';
 import Slider from '../../components/Slider';
+import Layout from '../../layout';
 
 const products = [
   {
@@ -105,9 +103,7 @@ const articles = [
 
 export default function Home() {
   return (
-    <>
-      <Info />
-      <Header />
+    <Layout>
       <Slider />
       <Destak />
       <ShowRoom />
@@ -116,7 +112,6 @@ export default function Home() {
       <FlashSale />
       <Articles articles={articles} />
       <NewsLetter />
-      <Footer />
-    </>
+    </Layout>
   );
 }
