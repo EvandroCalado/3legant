@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export type ProductCardProps = {
   isNew: boolean;
@@ -22,7 +23,7 @@ export default function ProductCard({
   price,
 }: ProductCardProps) {
   return (
-    <div className="block w-72">
+    <Link href={`/product/${slug}`} className="block w-72">
       <div className="flex items-center justify-between">
         <h4 className="font-semibold uppercase">Novos</h4>
 
@@ -80,6 +81,6 @@ export default function ProductCard({
         <span>R${price.toFixed(2)}</span>
         <span className="text-neutral-400">R$299.99</span>
       </div>
-    </div>
+    </Link>
   );
 }
