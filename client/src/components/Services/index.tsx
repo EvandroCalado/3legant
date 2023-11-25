@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Services() {
   return (
-    <div className="container mx-auto flex w-full flex-col items-center px-4 pb-16 md:flex-row">
+    <section className="container mx-auto flex w-full flex-col items-center px-4 pb-16 md:flex-row">
       <div className="grid w-full grid-cols-2 gap-8 p-4">
         <div className="space-y-2">
           <Image
@@ -52,6 +52,6 @@ export default function Services() {
           <p className="text-sm text-neutral-400">Via Email e Telefone</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

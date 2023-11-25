@@ -6,7 +6,7 @@ export type ArticlesProps = {
 
 export default function Articles({ articles }: ArticlesProps) {
   return (
-    <div className="container mx-auto my-20 px-4">
+    <article className="container mx-auto my-20 px-4">
       <h2 className="mb-8 text-2xl font-semibold">Artigos</h2>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -19,6 +19,6 @@ export default function Articles({ articles }: ArticlesProps) {
           />
         ))}
       </div>
-    </div>
+    </article>
   );
 }

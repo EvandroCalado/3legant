@@ -4,7 +4,7 @@ import MenuLinks from '../MenuLinks';
 
 export default function Footer() {
   return (
-    <div className="h-[570px] space-y-16 bg-neltral-07 px-4 pb-8 pt-20 sm:h-[250px]">
+    <footer className="h-[570px] space-y-16 bg-neltral-07 px-4 pb-8 pt-20 sm:h-[250px]">
       <div className="container mx-auto flex flex-col items-center justify-center gap-6 px-4 sm:flex-row sm:justify-between">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-0">
           <Logo className="pr-0 text-xl text-white sm:pr-6" />
@@ -49,6 +49,6 @@ export default function Footer() {
           />
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

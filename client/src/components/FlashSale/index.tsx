@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function FlashSale() {
   return (
-    <div className="flex h-screen flex-col items-center gap-20 md:h-max md:flex-row">
+    <section className="flex h-screen flex-col items-center gap-20 md:h-max md:flex-row">
       <div className="relative h-[532px] w-full flex-1">
         <Image
           src={'/flash-sale.png'}
@@ -42,6 +42,6 @@ export default function FlashSale() {
           />
         </Link>
       </div>
-    </div>
+    </section>
   );
 }

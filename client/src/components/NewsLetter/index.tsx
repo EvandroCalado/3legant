@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function NewsLetter() {
   return (
-    <div className="relative flex h-[360px] items-center justify-center overflow-hidden bg-zinc-100 px-4">
+    <section className="relative flex h-[360px] items-center justify-center overflow-hidden bg-zinc-100 px-4">
       <Image
         src={'/news02.png'}
         alt="Footer 01"
@@ -46,6 +46,6 @@ export default function NewsLetter() {
         height={500}
         className="absolute -right-48 hidden lg:block"
       />
-    </div>
+    </section>
   );
 }
