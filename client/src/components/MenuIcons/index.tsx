@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Cart from '../Cart';
 import MenuSearch from '../MenuSearch';
 
 export default function MenuIcons() {
@@ -22,17 +23,7 @@ export default function MenuIcons() {
         </span>
       </Link>
 
-      <Link href={'/cart'} className="relative cursor-pointer">
-        <Image
-          src={'icons/shopping-bag.svg'}
-          alt="Shopping bag"
-          width={24}
-          height={24}
-        />
-        <span className="absolute -right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
-          1
-        </span>
-      </Link>
+      <Cart />
     </div>
   );
 }
