@@ -110,7 +110,7 @@ export default function SignUpForm() {
           <input
             id="default-checkbox"
             type="checkbox"
-            className="text-blue-600 dark:focus:ring-blue-600 h-4 w-4 rounded border-gray-300 bg-gray-100 dark:border-primary dark:bg-primary"
+            className="h-4 w-4 rounded border-gray-300 bg-gray-100 accent-primary"
             {...register('accept')}
           />
 

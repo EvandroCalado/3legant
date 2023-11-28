@@ -85,12 +85,12 @@ export default function SignInForm() {
           <input
             id="default-checkbox"
             type="checkbox"
-            className="text-blue-600 dark:focus:ring-blue-600 h-4 w-4 rounded border-gray-300 bg-gray-100 dark:border-primary dark:bg-primary"
+            className="h-4 w-4 rounded border-gray-300 bg-gray-100 accent-primary"
           />
           <div className="flex w-full items-center justify-between">
             <label
               htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-neltral-04 dark:text-gray-300"
+              className="ms-2 text-sm font-medium text-neltral-04"
             >
               Lembrar
             </label>
