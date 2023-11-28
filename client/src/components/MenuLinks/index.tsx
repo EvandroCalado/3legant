@@ -27,7 +27,7 @@ export default function MenuLinks({ className }: MenuLinksProps) {
   return (
     <div
       className={twMerge(
-        'hidden items-center space-x-4 font-semibold text-neltral-04 sm:flex',
+        'hidden items-center space-x-4 font-semibold text-neutral-400 sm:flex',
         className,
       )}
     >
