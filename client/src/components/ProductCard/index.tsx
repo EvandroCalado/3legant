@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Wishlist from '../../icons/wishlist';
 
 export type ProductCardProps = {
   isNew: boolean;
@@ -23,17 +24,12 @@ export default function ProductCard({
   price,
 }: ProductCardProps) {
   return (
-    <Link href={`/product/${slug}`} className="block w-72">
-      <div className="flex items-center justify-between">
+    <Link href={`/product/${slug}`} className="mx-auto block w-full p-4">
+      <div className="flex w-full items-center justify-between">
         <h4 className="font-semibold uppercase">Novos</h4>
 
         <button className="cursor-pointer" onClick={() => console.log('click')}>
-          <Image
-            src={'/icons/Line.svg'}
-            alt="wishlist"
-            width={24}
-            height={24}
-          />
+          <Wishlist />
         </button>
       </div>
 
@@ -41,7 +37,7 @@ export default function ProductCard({
         -{discount}%
       </span>
 
-      <div className="relative mb-6 h-80 w-72 overflow-hidden pb-12 [&>button]:hover:opacity-100">
+      <div className="relative mb-6 h-80 w-full overflow-hidden pb-12 [&>button]:hover:opacity-100">
         <Image src={image} alt={title} fill className="object-cover" />
 
         <button className="button absolute bottom-0 z-10 opacity-0">
