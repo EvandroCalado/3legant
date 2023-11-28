@@ -3,6 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import Close from '../../icons/close';
+import CloseGray from '../../icons/close-gray';
+import ShoppingBag from '../../icons/shopping-bag';
 
 export default function Cart() {
   const [open, setOpen] = useState(false);
@@ -10,12 +13,8 @@ export default function Cart() {
   return (
     <>
       <div className="relative cursor-pointer" onClick={() => setOpen(!open)}>
-        <Image
-          src={'icons/shopping-bag.svg'}
-          alt="Shopping bag"
-          width={24}
-          height={24}
-        />
+        <ShoppingBag />
+
         <span className="absolute -left-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
           1
         </span>
@@ -35,14 +34,10 @@ export default function Cart() {
       >
         <div className="flex items-center justify-between py-4">
           <h2 className="text-xl font-semibold">Carrinho</h2>
-          <Image
-            src={'/icons/x.svg'}
-            alt="Close"
-            width={24}
-            height={24}
-            className="cursor-pointer"
-            onClick={() => setOpen(!open)}
-          />
+
+          <span className="cursor-pointer" onClick={() => setOpen(!open)}>
+            <Close />
+          </span>
         </div>
 
         <div className="flex h-full flex-col justify-between pb-20">
@@ -69,13 +64,9 @@ export default function Cart() {
                 </div>
 
                 <div className=" flex h-full flex-col items-end justify-between gap-6">
-                  <Image
-                    src={'/icons/close-gray.svg'}
-                    alt="Close"
-                    width={18}
-                    height={18}
-                    className="cursor-pointer"
-                  />
+                  <span className="cursor-pointer [&>svg]:w-4">
+                    <CloseGray />
+                  </span>
                   <span className="text-[12px] font-semibold">R$ 99.99</span>
                 </div>
               </div>
@@ -103,13 +94,9 @@ export default function Cart() {
                 </div>
 
                 <div className=" flex h-full flex-col items-end justify-between gap-6">
-                  <Image
-                    src={'/icons/close-gray.svg'}
-                    alt="Close"
-                    width={18}
-                    height={18}
-                    className="cursor-pointer"
-                  />
+                  <span className="cursor-pointer [&>svg]:w-4">
+                    <CloseGray />
+                  </span>
                   <span className="text-[12px] font-semibold">R$ 99.99</span>
                 </div>
               </div>
@@ -137,13 +124,9 @@ export default function Cart() {
                 </div>
 
                 <div className=" flex h-full flex-col items-end justify-between gap-6">
-                  <Image
-                    src={'/icons/close-gray.svg'}
-                    alt="Close"
-                    width={18}
-                    height={18}
-                    className="cursor-pointer"
-                  />
+                  <span className="cursor-pointer [&>svg]:w-4">
+                    <CloseGray />
+                  </span>
                   <span className="text-[12px] font-semibold">R$ 99.99</span>
                 </div>
               </div>

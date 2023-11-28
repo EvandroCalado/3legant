@@ -1,21 +1,17 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
+import Search from '../../icons/search';
 
 export default function MenuSearch() {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="relative hidden sm:block">
-      <Image
-        src={'/icons/search.svg'}
-        alt="Search"
-        width={24}
-        height={24}
-        className="cursor-pointer"
-        onClick={() => setOpen(!open)}
-      />
+      <span className="cursor-pointer" onClick={() => setOpen(!open)}>
+        <Search />
+      </span>
+
       <div
         className={`${
           open ? 'visible ' : 'invisible -top-2'

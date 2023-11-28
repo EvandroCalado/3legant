@@ -1,15 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Ticket from '../../icons/ticket';
 
 export default function Info() {
   return (
     <header className="flex items-center justify-center space-x-4 p-2">
-      <Image
-        src={'/icons/ticket-percent.svg'}
-        alt="Ticket icon"
-        width={24}
-        height={24}
-      />
+      <Ticket />
 
       <span>30% off por tempo limitado</span>
 
