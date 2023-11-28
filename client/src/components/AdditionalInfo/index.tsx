@@ -1,6 +1,13 @@
+import { motion } from 'framer-motion';
+
 export default function AdditionalInfo() {
   return (
-    <div className="space-y-4">
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="space-y-4"
+    >
       <h2 className="text-2xl font-semibold">Informações Adicionais</h2>
 
       <div className="space-y-2">
@@ -20,6 +27,6 @@ export default function AdditionalInfo() {
           <li>Embalagens: 1 unidade</li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }

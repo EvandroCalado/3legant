@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 import ReviewItem from '../ReviewItem';
 
@@ -5,7 +6,12 @@ const ratingStars = [1, 2, 3, 4, 5];
 
 export default function Reviews() {
   return (
-    <div className=" space-y-4">
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className=" space-y-4"
+    >
       <h2 className="text-xl font-semibold sm:text-2xl">
         Avaliações dos Clientes
       </h2>
@@ -63,6 +69,6 @@ export default function Reviews() {
           Ver mais
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
