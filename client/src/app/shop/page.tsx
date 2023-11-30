@@ -82,7 +82,12 @@ export default function Shop() {
   return (
     <Layout>
       <div className="container mx-auto">
-        <Helmet />
+        <Helmet
+          path="Home Loja"
+          title="Loja"
+          image="/shop.png"
+          description="Vamos projetar o lugar que você sempre imaginou."
+        />
 
         <div className="my-16 flex items-center justify-between px-4">
           <div className="flex items-center gap-2">
