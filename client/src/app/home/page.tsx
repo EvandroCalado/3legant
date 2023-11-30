@@ -110,7 +110,7 @@ export default function Home() {
       <NewArrivals products={products} />
       <Services />
       <FlashSale />
-      <Articles articles={articles} />
+      <Articles articles={articles} title="Artigos" />
       <NewsLetter />
     </Layout>
   );
