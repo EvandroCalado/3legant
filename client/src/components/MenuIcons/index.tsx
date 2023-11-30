@@ -1,24 +1,36 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import User from '../../icons/user';
-import Wishlist from '../../icons/wishlist';
 import Cart from '../Cart';
 import MenuSearch from '../MenuSearch';
 
 export default function MenuIcons() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex items-center space-x-4">
       <MenuSearch />
 
-      <span className="hidden cursor-pointer sm:block">
+      <span
+        className="relative hidden cursor-pointer sm:block"
+        onClick={() => setOpen(!open)}
+      >
         <User />
+        <div
+          className={`${
+            open ? 'visible top-8' : 'invisible top-4'
+          } absolute right-0 z-30 flex flex-col gap-4 rounded-md border bg-white p-4 text-neutral-400 shadow-xl duration-300`}
+        >
+          <Link href={'/signin'} className="duration-150 hover:text-primary">
+            Entrar
+          </Link>
+          <Link href={'/account'} className="duration-150 hover:text-primary">
+            Conta
+          </Link>
+        </div>
       </span>
-
-      <Link href={'/wishlist'} className="relative cursor-pointer">
-        <Wishlist />
-        <span className="absolute -left-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
-          1
-        </span>
-      </Link>
 
       <Cart />
     </div>

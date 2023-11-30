@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import StarFill from '../../icons/star-fill';
+import StarLine from '../../icons/star-line';
 import Wishlist from '../../icons/wishlist';
 
 export type ProductCardProps = {
@@ -49,23 +51,15 @@ export default function ProductCard({
         {ratingStars.map((star) => {
           if (star <= rating) {
             return (
-              <Image
-                key={star}
-                src={'/icons/star-fill.svg'}
-                alt="Star"
-                width={24}
-                height={24}
-              />
+              <span className="[&>svg]:w-6">
+                <StarFill />
+              </span>
             );
           } else {
             return (
-              <Image
-                key={star}
-                src={'/icons/star-line.svg'}
-                alt="Star"
-                width={24}
-                height={24}
-              />
+              <span className="[&>svg]:w-6">
+                <StarLine />
+              </span>
             );
           }
         })}
