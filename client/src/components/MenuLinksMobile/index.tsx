@@ -13,6 +13,11 @@ const menuLinks = [
   },
   {
     id: 3,
+    title: 'Blog',
+    path: '/blog',
+  },
+  {
+    id: 4,
     title: 'Contato',
     path: '/contato',
   },
