@@ -1,25 +1,31 @@
-import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
-export default function Helmet() {
+export type HelmetProps = {
+  path: string;
+  image: string;
+  title: string;
+  description: string;
+};
+
+export default function Helmet({
+  path,
+  image,
+  title,
+  description,
+}: HelmetProps) {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto">
       <div className="relative h-[392px] w-full">
-        <Image src={'/shop.png'} alt="Shop" fill />
+        <Image src={image} alt={title} fill />
 
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8">
-          <div className="flex items-center gap-2">
-            <span className="flex items-center text-neutral-400">
-              Home <ChevronRight size={18} />
-            </span>
-            <span className="font-semibold">Loja</span>
+          <div className="flex items-center text-sm text-neutral-500">
+            {path.replace(' ', ' › ')}
           </div>
 
-          <h1 className="text-6xl font-medium">Loja</h1>
+          <h1 className="text-6xl font-medium">{title}</h1>
 
-          <p className="text-center text-xl">
-            Vamos projetar o lugar que você sempre imaginou.
-          </p>
+          <p className="text-center text-xl">{description}</p>
         </div>
       </div>
     </div>
