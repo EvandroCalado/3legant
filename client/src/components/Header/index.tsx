@@ -10,6 +10,7 @@ export default function Header() {
         <MenuMobile />
         <Logo />
       </div>
+
       <MenuLinks />
       <MenuIcons />
     </header>
