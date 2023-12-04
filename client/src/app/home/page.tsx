@@ -1,3 +1,6 @@
+import { CategoriesFetcher } from '../../api/categories';
+import { ProductsFetcher } from '../../api/products';
+import { SliderFetcher } from '../../api/slider';
 import Articles from '../../components/Articles';
 import Destak from '../../components/Destak';
 import FlashSale from '../../components/FlashSale';
@@ -7,81 +10,6 @@ import Services from '../../components/Services';
 import ShowRoom from '../../components/ShowRoom';
 import Slider from '../../components/Slider';
 import Layout from '../../layout';
-
-const products = [
-  {
-    isNew: true,
-    slug: 'luminaria-de-mesa',
-    discount: 50,
-    image: '/product01.png',
-    rating: 3,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    slug: 'luminaria-de-mesa',
-    discount: 50,
-    image: '/product02.png',
-    rating: 2,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    discount: 50,
-    slug: 'luminaria-de-mesa',
-    image: '/product03.png',
-    rating: 4,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    slug: 'luminaria-de-mesa',
-    discount: 50,
-    image: '/product04.png',
-    rating: 5,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    slug: 'luminaria-de-mesa',
-    discount: 50,
-    image: '/product01.png',
-    rating: 3,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    slug: 'luminaria-de-mesa',
-    discount: 50,
-    image: '/product02.png',
-    rating: 1,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    discount: 50,
-    slug: 'luminaria-de-mesa',
-    image: '/product03.png',
-    rating: 3,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-  {
-    isNew: true,
-    slug: 'luminaria-de-mesa',
-    discount: 50,
-    image: '/product04.png',
-    rating: 5,
-    title: 'Luminária de mesa',
-    price: 179.99,
-  },
-];
 
 const articles = [
   {
@@ -101,12 +29,24 @@ const articles = [
   },
 ];
 
-export default function Home() {
+const slidesFetcher = new SliderFetcher();
+const productsFetcher = new ProductsFetcher();
+const categoriesFetcher = new CategoriesFetcher();
+
+export default async function Home() {
+  const slides = await slidesFetcher.getAll();
+  const products = await productsFetcher.getAll();
+  const categories = await categoriesFetcher.getAll();
+
+  if (!slides) return null;
+  if (!products) return null;
+  if (!categories) return null;
+
   return (
     <Layout>
-      <Slider />
+      <Slider slides={slides} />
       <Destak />
-      <ShowRoom />
+      <ShowRoom categories={categories} />
       <NewArrivals products={products} />
       <Services />
       <FlashSale />
