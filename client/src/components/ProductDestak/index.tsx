@@ -5,12 +5,14 @@ export type ProductDestakProps = {
   isLandscape?: boolean;
   title?: string;
   image?: string;
+  slug?: string;
 };
 
 export default function ProductDestak({
   isLandscape = false,
   title,
   image,
+  slug,
 }: ProductDestakProps) {
   return (
     <div
@@ -21,7 +23,7 @@ export default function ProductDestak({
       <div className={`${isLandscape ? 'my-8' : ''} flex flex-col justify-end`}>
         <h2 className="text-2xl font-semibold">{title}</h2>
         <Link
-          href={'/'}
+          href={`/categories/${slug}`}
           className="flex w-12 items-center border-b border-primary text-sm text-primary [&>img]:ml-1 [&>img]:hover:ml-2"
         >
           Loja{' '}

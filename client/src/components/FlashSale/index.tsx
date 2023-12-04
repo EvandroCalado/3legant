@@ -29,7 +29,7 @@ export default function FlashSale() {
         </p>
 
         <Link
-          href={'/'}
+          href={'/shop'}
           className="flex w-12 items-center border-b border-primary text-sm font-semibold text-primary [&>img]:ml-1 [&>img]:hover:ml-2"
         >
           Loja{' '}

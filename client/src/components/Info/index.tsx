@@ -10,7 +10,7 @@ export default function Info() {
       <span>30% off por tempo limitado</span>
 
       <Link
-        href={'/'}
+        href={'/shop'}
         className="hidden w-12 items-center border-b border-blue text-blue sm:flex [&>img]:ml-1 [&>img]:hover:ml-2"
       >
         Loja{' '}

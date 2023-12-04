@@ -3,10 +3,10 @@ export default function Destak() {
     <section className="container mx-auto my-4 flex flex-col items-center gap-8 px-4 sm:flex-row md:my-12 md:gap-10 lg:gap-16">
       <div className="flex-2 text-2xl md:text-4xl lg:text-7xl">
         <h2>
-          Simplesmente Único <span className="text-neltral-04">/</span>
+          Simplesmente Único <span className="text-neutral-300">/</span>
         </h2>
         <h2>
-          Simplesmente Melhor <span className="text-neltral-04">.</span>
+          Simplesmente Melhor <span className="text-neutral-300">.</span>
         </h2>
       </div>
 

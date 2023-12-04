@@ -10,19 +10,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../../styles/globals.css';
-
-type ProductCardProps = {
-  isNew: boolean;
-  slug: string;
-  discount: number;
-  image: string;
-  rating: number;
-  title: string;
-  price: number;
-};
+import { ProductType } from '../../types/products-types';
 
 export type ProductsCardProps = {
-  products: ProductCardProps[];
+  products: ProductType[];
 };
 
 export default function NewArrivals({ products }: ProductsCardProps) {
@@ -32,7 +23,7 @@ export default function NewArrivals({ products }: ProductsCardProps) {
         <h2 className="text-2xl font-semibold">Novidades</h2>
 
         <Link
-          href={'/'}
+          href={'/shop'}
           className="hidden w-[123px] items-center border-b border-primary text-sm text-primary sm:flex [&>img]:ml-1 [&>img]:hover:ml-2"
         >
           Mais Produtos{' '}
@@ -69,16 +60,8 @@ export default function NewArrivals({ products }: ProductsCardProps) {
         }}
       >
         {products.map((product) => (
-          <SwiperSlide key={product.slug}>
-            <ProductCard
-              isNew={product.isNew}
-              slug={product.slug}
-              discount={product.discount}
-              image={product.image}
-              rating={product.rating}
-              title={product.title}
-              price={product.price}
-            />
+          <SwiperSlide key={product.id}>
+            <ProductCard product={product} />
           </SwiperSlide>
         ))}
       </Swiper>
